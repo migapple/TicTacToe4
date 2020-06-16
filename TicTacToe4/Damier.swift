@@ -8,6 +8,12 @@
 
 import SwiftUI
 
+enum Gagnant {
+    case personne
+    case joueur
+    case IA
+}
+
 enum TypeCase: String {
     case vide = "case vide"
     case joueur = "case joueur"

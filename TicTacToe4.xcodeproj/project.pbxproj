@@ -20,6 +20,7 @@
 		53023DE72497504000FD1B6C /* IA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53023DE62497504000FD1B6C /* IA.swift */; };
 		53023DE92497522B00FD1B6C /* DamierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53023DE82497522B00FD1B6C /* DamierView.swift */; };
 		53023DEB2497949F00FD1B6C /* BoutonPerso.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53023DEA2497949F00FD1B6C /* BoutonPerso.swift */; };
+		53E670232498BE9C001BD2D0 /* Outils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E670222498BE9C001BD2D0 /* Outils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		53023DE62497504000FD1B6C /* IA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IA.swift; sourceTree = "<group>"; };
 		53023DE82497522B00FD1B6C /* DamierView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DamierView.swift; sourceTree = "<group>"; };
 		53023DEA2497949F00FD1B6C /* BoutonPerso.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoutonPerso.swift; sourceTree = "<group>"; };
+		53E670222498BE9C001BD2D0 /* Outils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Outils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				53023DE224973F4B00FD1B6C /* Damier.swift */,
 				53023DE424974C3800FD1B6C /* Automate.swift */,
 				53023DE62497504000FD1B6C /* IA.swift */,
+				53E670222498BE9C001BD2D0 /* Outils.swift */,
 				53023DD224973E2000FD1B6C /* Assets.xcassets */,
 				53023DD724973E2000FD1B6C /* LaunchScreen.storyboard */,
 				53023DDA24973E2000FD1B6C /* Info.plist */,
@@ -170,6 +173,7 @@
 				53023DCA24973E1F00FD1B6C /* AppDelegate.swift in Sources */,
 				53023DCC24973E1F00FD1B6C /* SceneDelegate.swift in Sources */,
 				53023DE124973EC200FD1B6C /* CaseView.swift in Sources */,
+				53E670232498BE9C001BD2D0 /* Outils.swift in Sources */,
 				53023DE324973F4B00FD1B6C /* Damier.swift in Sources */,
 				53023DD124973E1F00FD1B6C /* ContentView.swift in Sources */,
 				53023DE72497504000FD1B6C /* IA.swift in Sources */,

@@ -26,6 +26,7 @@ class Automate: ObservableObject {
     @Published var interfaceActive = false
     @Published var opaciteDamier = 1.0
     @Published var compteurIA = 0
+    @Published var compteurJoueur = 0
     private var ia = IA()
     
     var etatCourant = EtatAutomate.indetermine
@@ -38,7 +39,6 @@ class Automate: ObservableObject {
 extension Automate {
     func activer(etat: EtatAutomate) {
         switch etat {
-            
         case .indetermine:
             break
         case .parametrage:
@@ -74,8 +74,8 @@ extension Automate {
             break
         case .reset:
             interfaceActive = false
-//            compteurIA = 0
-//            compteurJoueur = 0
+            compteurIA = 0
+            compteurJoueur = 0
             break
         }
         etatCourant = etat
