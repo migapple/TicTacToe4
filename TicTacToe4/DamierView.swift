@@ -36,9 +36,9 @@ struct DamierView: View {
     }
 }
 
-//struct DamierView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        DamierView()
-//    }
-//}
+struct DamierView_Previews: PreviewProvider {
+    static var previews: some View {
+        DamierView(actif: true, damier: Damier.init(nbLignes: 3, nbColonnes: 3), action: { _ in})
+    }
+}
 

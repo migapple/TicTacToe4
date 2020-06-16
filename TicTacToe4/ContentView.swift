@@ -22,7 +22,7 @@ struct ContentView: View {
             Spacer()
             
             HStack {
-                Text("IA: \(compteurIA)")
+                Text("IA: \(automate.compteurIA)")
                 Text("Joueur: \(compteurJoueur)")
             }
             
@@ -35,16 +35,13 @@ struct ContentView: View {
                 Button(action:{
                   self.resetgrilleJeu()
                   self.automate.activer(etat: .tourJoueur)
-                    
                 }) {
-                    
                     BoutonPerso(text: "Joueur Commence", couleur: .green)
                 }
                 
                 Button(action:{
                   self.resetgrilleJeu()
                   self.automate.activer(etat: .tourIA)
-                    
                 }) {
                     BoutonPerso(text: "IA Commence", couleur: .red)
                 }

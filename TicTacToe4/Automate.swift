@@ -25,6 +25,7 @@ class Automate: ObservableObject {
     @Published var damier = Damier(nbLignes: 3, nbColonnes: 3)
     @Published var interfaceActive = false
     @Published var opaciteDamier = 1.0
+    @Published var compteurIA = 0
     private var ia = IA()
     
     var etatCourant = EtatAutomate.indetermine
@@ -52,6 +53,7 @@ extension Automate {
             opaciteDamier = 1.0
             interfaceActive = false
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.compteurIA += 1
                 self.ia.jouerTour(damier: &self.damier)
                 self.activer(etat: .tourJoueur)
             }
