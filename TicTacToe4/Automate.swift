@@ -61,12 +61,17 @@ class Automate: ObservableObject {
                 // On affiche les cases en vert
                 for i in 0..<nbLineRaw {
                     // Mise des case en vert
-                    //                    let index = twoDim(nombre: combinaison[i], nbLineRaw: nbLineRaw)
-                    //                    DescriptionCase.contenu == TypeCase.gagnant
+                    let index = twoDim(nombre: combinaison[i], nbLineRaw: nbLineRaw)
+                    damier.caseGagnant(index: index, contenu: .gagnant)
                 }
             } else if nbIA == nbLineRaw {
                 gagnant = .IA
                 // Mise des case en vert
+                for i in 0..<nbLineRaw {
+                    // Mise des case en vert
+                    let index = twoDim(nombre: combinaison[i], nbLineRaw: nbLineRaw)
+                    damier.caseGagnant(index: index, contenu: .gagnant)
+                }
             }
         }
         return gagnant

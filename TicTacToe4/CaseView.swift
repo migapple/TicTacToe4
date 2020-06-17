@@ -15,7 +15,8 @@ import SwiftUI
 fileprivate let couleursCase:[TypeCase:Color] = [
     .vide: Color.gray,
     .joueur: Color.blue,
-    .ia: Color.red
+    .ia: Color.red,
+    .gagnant: Color.green
 ]
 
 /// Description

@@ -18,6 +18,7 @@ enum TypeCase: String {
     case vide = "case vide"
     case joueur = "case joueur"
     case ia = "case ia"
+    case gagnant = "case gagnant"
 }
 
 struct IndexCase {
@@ -90,6 +91,10 @@ struct Damier {
                 _nbCasesLibres -= 1
             }
         }
+    }
+    
+    mutating func caseGagnant(index: IndexCase, contenu: TypeCase) {
+        cases[index.ligne][index.colonne].contenu = contenu
     }
                 
     // Verification si un index est valable
