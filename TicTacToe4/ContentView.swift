@@ -62,7 +62,8 @@ struct ContentView: View {
         automate.damier.changerCase(index: index, contenu: .joueur)
         compteurJoueur += 1
         
-        let gagnant = quiAGagne(line: index.ligne, raw: index.colonne, nbLineRaw: 3, winComb: winComb)
+//        let gagnant = quiAGagne(nbLineRaw: 3, winComb: winComb)
+        let gagnant = automate.quiAGagne(nbLineRaw: 3, winComb: winComb)
         
         if gagnant == .joueur {
             automate.activer(etat: .joueurGagnant)
@@ -90,40 +91,38 @@ struct ContentView: View {
     /// <#Description#>
     /// Teste qui a gagné et affiche les cases en vert
     /// - Parameters:
-    ///   - line: ligne
-    ///   - raw: colonne
     ///   - nbLineRaw: nombre de ligne-colonne
     ///   - winComb: tableau des combinaisons gagnantes
-    func quiAGagne(line: Int, raw: Int, nbLineRaw: Int, winComb: [[Int]]) -> Gagnant {
-        var gagnant = Gagnant.personne
-
-        for combinaison in winComb {
-            var nbJoueur = 0
-            var nbIA = 0
-
-            for i in 0..<nbLineRaw {
-                let index = twoDim(nombre: combinaison[i], nbLineRaw: nbLineRaw)
-                let descriptionCase = automate.damier.lireCase(index: index)
-
-                if descriptionCase?.contenu == TypeCase.joueur { nbJoueur += 1 }
-                if descriptionCase?.contenu == TypeCase.ia { nbIA += 1 }
-            }
-
-            if nbJoueur == nbLineRaw {
-                gagnant = .joueur
-                // On affiche les cases en vert
-                for i in 0..<nbLineRaw {
-                    // Mise des case en vert
-//                    let index = twoDim(nombre: combinaison[i], nbLineRaw: nbLineRaw)
-//                    DescriptionCase.contenu == TypeCase.gagnant
-                }
-            } else if nbIA == nbLineRaw {
-                gagnant = .IA
-                // Mise des case en vert
-            }
-        }
-        return gagnant
-    }
+//    func quiAGagne(nbLineRaw: Int, winComb: [[Int]]) -> Gagnant {
+//        var gagnant = Gagnant.personne
+//
+//        for combinaison in winComb {
+//            var nbJoueur = 0
+//            var nbIA = 0
+//
+//            for i in 0..<nbLineRaw {
+//                let index = twoDim(nombre: combinaison[i], nbLineRaw: nbLineRaw)
+//                let descriptionCase = automate.damier.lireCase(index: index)
+//
+//                if descriptionCase?.contenu == TypeCase.joueur { nbJoueur += 1 }
+//                if descriptionCase?.contenu == TypeCase.ia { nbIA += 1 }
+//            }
+//
+//            if nbJoueur == nbLineRaw {
+//                gagnant = .joueur
+//                // On affiche les cases en vert
+//                for i in 0..<nbLineRaw {
+//                    // Mise des case en vert
+////                    let index = twoDim(nombre: combinaison[i], nbLineRaw: nbLineRaw)
+////                    DescriptionCase.contenu == TypeCase.gagnant
+//                }
+//            } else if nbIA == nbLineRaw {
+//                gagnant = .IA
+//                // Mise des case en vert
+//            }
+//        }
+//        return gagnant
+//    }
 }
 
 struct ContentView_Previews: PreviewProvider {

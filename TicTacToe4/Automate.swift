@@ -35,36 +35,42 @@ class Automate: ObservableObject {
         activer(etat: .parametrage)
     }
     
-    func quiAGagne(line: Int, raw: Int, nbLineRaw: Int, winComb: [[Int]]) -> Gagnant {
-            var gagnant = Gagnant.personne
-
-            for combinaison in winComb {
-                var nbJoueur = 0
-                var nbIA = 0
-
-                for i in 0..<nbLineRaw {
-                    let index = twoDim(nombre: combinaison[i], nbLineRaw: nbLineRaw)
-                    let descriptionCase = damier.lireCase(index: index)
-
-                    if descriptionCase?.contenu == TypeCase.joueur { nbJoueur += 1 }
-                    if descriptionCase?.contenu == TypeCase.ia { nbIA += 1 }
-                }
-
-                if nbJoueur == nbLineRaw {
-                    gagnant = .joueur
-                    // On affiche les cases en vert
-                    for i in 0..<nbLineRaw {
-                        // Mise des case en vert
-    //                    let index = twoDim(nombre: combinaison[i], nbLineRaw: nbLineRaw)
-    //                    DescriptionCase.contenu == TypeCase.gagnant
-                    }
-                } else if nbIA == nbLineRaw {
-                    gagnant = .IA
-                    // Mise des case en vert
-                }
+    /// <#Description#>
+    /// - Parameters:
+    ///   - nbLineRaw: Nombre de lignes colonnes
+    ///   - winComb: Combinaisions gagnantes
+    /// - Returns: <#description#>
+    ///   - gagnant
+    func quiAGagne(nbLineRaw: Int, winComb: [[Int]]) -> Gagnant {
+        var gagnant = Gagnant.personne
+        
+        for combinaison in winComb {
+            var nbJoueur = 0
+            var nbIA = 0
+            
+            for i in 0..<nbLineRaw {
+                let index = twoDim(nombre: combinaison[i], nbLineRaw: nbLineRaw)
+                let descriptionCase = damier.lireCase(index: index)
+                
+                if descriptionCase?.contenu == TypeCase.joueur { nbJoueur += 1 }
+                if descriptionCase?.contenu == TypeCase.ia { nbIA += 1 }
             }
-            return gagnant
+            
+            if nbJoueur == nbLineRaw {
+                gagnant = .joueur
+                // On affiche les cases en vert
+                for i in 0..<nbLineRaw {
+                    // Mise des case en vert
+                    //                    let index = twoDim(nombre: combinaison[i], nbLineRaw: nbLineRaw)
+                    //                    DescriptionCase.contenu == TypeCase.gagnant
+                }
+            } else if nbIA == nbLineRaw {
+                gagnant = .IA
+                // Mise des case en vert
+            }
         }
+        return gagnant
+    }
 }
 
 extension Automate {
@@ -86,11 +92,11 @@ extension Automate {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 self.compteurIA += 1
                 self.ia.jouerTour(damier: &self.damier)
-                let quiGagne = self.quiAGagne(line: 3, raw: 3, nbLineRaw: 3, winComb: winComb)
+                let quiGagne = self.quiAGagne(nbLineRaw: 3, winComb: winComb)
                 if quiGagne == .IA {
                     self.activer(etat: .IAGagnant)
                 } else {
-                self.activer(etat: .tourJoueur)
+                    self.activer(etat: .tourJoueur)
                 }
             }
         case .joueurGagnant:
